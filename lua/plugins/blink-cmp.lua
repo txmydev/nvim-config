@@ -27,7 +27,15 @@ return {
             -- C-k: Toggle signature help (if signature.enabled = true)
             --
             -- See :h blink-cmp-config-keymap for defining your own keymap
-            keymap = { preset = 'default' },
+            keymap = {
+                preset = 'default',
+                ['<Enter>'] = { 'accept', 'snippet_forward', 'fallback' },
+                ['<C-p>'] = { 'cancel', 'fallback' },
+                ['<Esc>'] = { function(cmp) cmp.cancel(); vim.cmd("stopinsert"); end },
+                ['<Tab>'] = { 'select_next' },
+                ['<S-Tab>'] = { 'select_prev' },
+
+            },
 
             -- (Default) Only show the documentation popup when manually triggered
             completion = { documentation = { auto_show = false } },
