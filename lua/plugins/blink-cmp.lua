@@ -28,12 +28,14 @@ return {
             --
             -- See :h blink-cmp-config-keymap for defining your own keymap
             keymap = {
-                preset = 'default',
+                preset = 'none',
                 ['<Enter>'] = { 'accept', 'snippet_forward', 'fallback' },
-                ['<C-p>'] = { 'cancel', 'fallback' },
+                ['<C-Space>'] = { 'show' },
+                ['<C-i>'] = { 'accept', 'snippet_forward', 'fallback' },
+                ['<C-k>'] = { 'cancel', 'fallback' },
                 ['<Esc>'] = { function(cmp) cmp.cancel(); vim.cmd("stopinsert"); end },
-                ['<Tab>'] = { 'select_next' },
-                ['<S-Tab>'] = { 'select_prev' },
+                ['<C-n>'] = { 'select_next' },
+                ['<C-p>'] = { 'select_prev' },
 
             },
 

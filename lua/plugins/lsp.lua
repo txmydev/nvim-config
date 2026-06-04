@@ -35,6 +35,14 @@ return {
                     vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
                     vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, opts)
                     vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
+                    vim.keymap.set("n", "<leader>oi", function()
+                        vim.lsp.buf.code_action({
+                            context = {
+                                only = { "source.organizeImports" },
+                            },
+                            apply = true,
+                        })
+                    end, { desc = "Organize imports" } )
                 end,
             })
         end,
