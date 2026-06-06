@@ -4,7 +4,7 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.tabstop = 4
 -- vim.schedule(function()
-vim.opt.clipboard = "unnamedplus"
+-- vim.opt.clipboard = "unnamedplus"
 -- end)
 
 if os.getenv("WAYLAND_DISPLAY") then
