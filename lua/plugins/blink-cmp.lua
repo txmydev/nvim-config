@@ -29,7 +29,7 @@ return {
             -- See :h blink-cmp-config-keymap for defining your own keymap
             keymap = {
                 preset = 'none',
-                ['<Enter>'] = { 'accept', 'snippet_forward', 'fallback' },
+                -- ['<Enter>'] = { 'accept', 'snippet_forward', 'fallback' },
                 ['<C-Space>'] = { 'show' },
                 ['<C-i>'] = { 'accept', 'snippet_forward', 'fallback' },
                 ['<C-k>'] = { 'cancel', 'fallback' },

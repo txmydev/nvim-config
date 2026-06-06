@@ -23,7 +23,7 @@ elseif os.getenv("DISPLAY") then
     }
 end
 
-vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave" }, {
+vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
   callback = function()
     if vim.bo.buftype == "" then  -- only real files, not terminals/popups
       vim.wo.relativenumber = true
@@ -31,8 +31,13 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained", "InsertLeave" }, {
   end,
 })
 
-vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost", "InsertEnter" }, {
+vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
   callback = function()
+    -- Save on buffer leave or when Neovim loses focus
+    if vim.bo.modifiable and not vim.bo.readonly and vim.fn.expand("%:p") ~= "" then
+      vim.cmd("silent! update")
+    end
+
     vim.wo.relativenumber = false
   end,
 })
