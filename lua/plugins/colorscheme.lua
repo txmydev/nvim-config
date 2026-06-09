@@ -1,14 +1,15 @@
 return {
-    { "catppuccin/nvim",
+    {
+        "catppuccin/nvim",
         name = "catppuccin",
-        enabled = true,
+        enabled = false,
         opts = {
             transparent_background = true,
             no_italic = true,
         },
         config = function(_, opts)
             require('catppuccin').setup(opts)
-            vim.cmd("colorscheme catppuccin-macchiato")
+            -- vim.cmd("colorscheme catppuccin-macchiato")
         end,
     },
     -- GRUVBOX
@@ -20,22 +21,7 @@ return {
         },
         config = function(_, opts)
             require('gruvbox').setup(opts)
-            vim.cmd("colorscheme gruvbox")
-        end,
-    },
-    -- ROSE-PINE
-    {
-        "rose-pine/neovim",
-        name = "rose-pine",
-        enabled = false,
-        opts = {
-            styles = {
-                italic = false,
-            },
-        },
-        config = function(_, opts)
-            require('rose-pine').setup(opts)
-            vim.cmd("colorscheme rose-pine")
+            -- vim.cmd("colorscheme gruvbox")
         end,
     },
     -- VAGUE
@@ -48,7 +34,19 @@ return {
         },
         config = function(_, opts)
             require('vague').setup(opts)
-            vim.cmd("colorscheme vague")
+            -- vim.cmd("colorscheme vague")
+        end,
+    },
+    {
+        "EdenEast/nightfox.nvim",
+        enabled = false,
+        config = function()
+            require('nightfox').setup({
+                options = {
+                    transparent = true,
+                }
+            })
+            vim.cmd("colorscheme nightfox")
         end,
     }
 }
