@@ -36,8 +36,8 @@ return {
                 ['<Esc>'] = { function(cmp) cmp.cancel(); vim.cmd("stopinsert"); end },
                 ['<C-n>'] = { 'select_next' },
                 ['<C-p>'] = { 'select_prev' },
-                ['<C-b>'] = { 'scroll_documentation_up', 'fallback' },
-                ['<C-f>'] = { 'scroll_documentation_down', 'fallback' },
+                ['<C-j>'] = { 'scroll_documentation_up', 'fallback' },
+                ['<C-m>'] = { 'scroll_documentation_down', 'fallback' },
             },
 
             -- (Default) Only show the documentation popup when manually triggered

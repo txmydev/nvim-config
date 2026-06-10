@@ -8,7 +8,7 @@ vim.opt.tabstop = 4
 -- end)
 --
 vim.schedule(function ()
-    vim.opt.guicursor = "n-v:block,i-ci-r:block-blinkwait0-blinkon500-blinkoff500"
+    vim.opt.guicursor = "n-v:block,i-ci-r:block-blinkwait0-blinkon300-blinkoff700"
 end)
 
 if os.getenv("WAYLAND_DISPLAY") then
