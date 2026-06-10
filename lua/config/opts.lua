@@ -6,6 +6,10 @@ vim.opt.tabstop = 4
 -- vim.schedule(function()
 -- vim.opt.clipboard = "unnamedplus"
 -- end)
+--
+vim.schedule(function ()
+    vim.opt.guicursor = "n-v:block,i-ci-r:block-blinkwait0-blinkon500-blinkoff500"
+end)
 
 if os.getenv("WAYLAND_DISPLAY") then
     vim.g.clipboard = {
