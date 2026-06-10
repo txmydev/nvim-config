@@ -30,7 +30,7 @@ return {
             keymap = {
                 preset = 'none',
                 -- ['<Enter>'] = { 'accept', 'snippet_forward', 'fallback' },
-                ['<C-Space>'] = { 'show' },
+                ['<C-Space>'] = { 'show', 'show_documentation', 'hide_documentation' },
                 ['<C-i>'] = { 'accept', 'snippet_forward', 'fallback' },
                 ['<C-k>'] = { 'cancel', 'fallback' },
                 ['<Esc>'] = { function(cmp) cmp.cancel(); vim.cmd("stopinsert"); end },
