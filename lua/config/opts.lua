@@ -31,6 +31,7 @@ vim.api.nvim_create_autocmd({ "BufEnter", "FocusGained" }, {
   callback = function()
     if vim.bo.buftype == "" then  -- only real files, not terminals/popups
       vim.wo.relativenumber = true
+      vim.wo.number = true
     end
   end,
 })
@@ -43,5 +44,6 @@ vim.api.nvim_create_autocmd({ "BufLeave", "FocusLost" }, {
     end
 
     vim.wo.relativenumber = false
+    vim.wo.number = false
   end,
 })
