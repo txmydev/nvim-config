@@ -34,6 +34,7 @@ return {
 					"query",
 					"regex",
 					"toml",
+					"templ",
 					"tsx",
 					"typescript",
 					"vim",
